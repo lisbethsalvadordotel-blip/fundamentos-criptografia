@@ -1,3 +1,45 @@
+# PRACTICA - PYTHON Y ALGORITMO DE SUSTITUCIÓN CÉSAR
+
+Autor: Lisbeth Salvador Dotel
+Materia: Criptografía
+Tema: Algoritmo de Sustitución César con Python
+
+--------------------------------------------------
+INTRODUCCIÓN
+--------------------------------------------------
+
+En esta práctica se trabajó con el algoritmo de sustitución César utilizando Python. 
+
+El cifrado César es un método de criptografía que consiste en mover cada letra una cantidad fija de posiciones en el alfabeto. En este caso se utiliza un desplazamiento de 3 posiciones.
+
+Ejemplo:
+
+a → d
+b → e
+c → f
+
+Para realizar esta práctica se utilizó una máquina virtual, aunque también se puede realizar instalando Python directamente en una computadora física.
+
+--------------------------------------------------
+PASO 1 - VERIFICAR PYTHON
+--------------------------------------------------
+
+Abrir la terminal y ejecutar:
+
+python3 -V
+
+Este comando sirve para verificar si Python está instalado correctamente y mostrar la versión instalada.
+
+--------------------------------------------------
+PASO 2 - CREAR EL PRIMER SCRIPT
+--------------------------------------------------
+
+Crear el archivo:
+
+nano caesar.py
+
+Pegar el siguiente código:
+
 cipher = input("Enter your cipher text: ")
 cipher = cipher.lower()
 letters = list(cipher)
@@ -10,8 +52,175 @@ alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
 for i in range(len(letters)):
     if letters[i] in alphabet:
         numbers[i] = alphabet1.index(letters[i])
-        numbers[i] = numbers[i]-3
+        numbers[i] = numbers[i] - 3
         letters[i] = alphabet[numbers[i]]
 
 final = ''.join(letters)
 print("The decoded phrase is: " + final)
+
+Guardar con:
+
+CTRL + O
+ENTER
+CTRL + X
+
+--------------------------------------------------
+PASO 3 - EJECUTAR EL SCRIPT
+--------------------------------------------------
+
+Ejecutar:
+
+python3 caesar.py
+
+El programa solicitará un texto para procesarlo.
+
+Ejemplo:
+
+Enter your cipher text:
+lisbeth
+
+--------------------------------------------------
+EXPLICACIÓN SENCILLA DEL PRIMER SCRIPT
+--------------------------------------------------
+
+input()
+Sirve para pedirle información al usuario.
+
+lower()
+Convierte el texto a minúsculas.
+
+list()
+Convierte el texto en una lista de letras.
+
+numbers
+Guarda posiciones numéricas.
+
+alphabet y alphabet1
+Representan el alfabeto utilizado para mover las letras.
+
+for
+Recorre cada letra del mensaje.
+
+if
+Verifica si el carácter es una letra.
+
+index()
+Busca la posición de la letra en la lista.
+
+join()
+Une nuevamente las letras.
+
+print()
+Muestra el resultado final.
+
+--------------------------------------------------
+EJERCICIOS REALIZADOS
+--------------------------------------------------
+
+Nombre:
+lisbeth
+
+Apellido:
+salvador
+
+Dirección:
+santo domingo
+
+--------------------------------------------------
+OTRO MÉTODO DIFERENTE
+--------------------------------------------------
+
+Método utilizando diccionario.
+
+Crear archivo:
+
+nano caesar_diccionario.py
+
+Pegar código:
+
+mensaje = input("Escribe el mensaje: ")
+
+cifrado = {
+    'a':'d', 'b':'e', 'c':'f',
+    'd':'g', 'e':'h', 'f':'i',
+    'g':'j', 'h':'k', 'i':'l',
+    'j':'m', 'k':'n', 'l':'o',
+    'm':'p', 'n':'q', 'o':'r',
+    'p':'s', 'q':'t', 'r':'u',
+    's':'v', 't':'w', 'u':'x',
+    'v':'y', 'w':'z', 'x':'a',
+    'y':'b', 'z':'c'
+}
+
+resultado = ""
+
+for letra in mensaje.lower():
+    if letra in cifrado:
+        resultado += cifrado[letra]
+    else:
+        resultado += letra
+
+print("Mensaje cifrado:", resultado)
+
+Guardar con:
+
+CTRL + O
+ENTER
+CTRL + X
+
+--------------------------------------------------
+EJECUTAR EL SEGUNDO MÉTODO
+--------------------------------------------------
+
+python3 caesar_diccionario.py
+
+Ejemplo:
+
+Escribe el mensaje:
+hola mundo
+
+Resultado:
+
+krod pxqgr
+
+--------------------------------------------------
+EXPLICACIÓN SENCILLA DEL SEGUNDO MÉTODO
+--------------------------------------------------
+
+mensaje
+Guarda el texto escrito por el usuario.
+
+cifrado
+Es un diccionario que reemplaza letras.
+
+Ejemplo:
+
+a → d
+b → e
+c → f
+
+resultado
+Guarda el mensaje cifrado final.
+
+for
+Recorre cada letra del mensaje.
+
+if
+Verifica si la letra existe en el diccionario.
+
++=
+Agrega letras al resultado.
+
+else
+Deja igual espacios o símbolos.
+
+print()
+Muestra el mensaje final cifrado.
+
+--------------------------------------------------
+CONCLUSIÓN
+--------------------------------------------------
+
+En esta práctica se aprendió a utilizar Python para implementar el algoritmo de sustitución César. También se verificó la instalación de Python, se ejecutaron scripts de cifrado y se probaron diferentes métodos para aplicar el cifrado César.
+
+Esta práctica ayudó a comprender cómo Python puede automatizar procesos básicos de criptografía utilizando diferentes formas de programación.
